@@ -4,6 +4,7 @@ html {
 
 .b-portfolio {
   max-width: 960px;
+  min-width: 320px;
   overflow: hidden;
   padding: 0;
   margin: 0 -0.7em -0.7em 0; }
