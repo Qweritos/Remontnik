@@ -3,6 +3,7 @@ html {
   font: 14px "Verdana", "Arial", ​sans-serif; }
 
 .b-portfolio {
+  max-width: 960px;
   overflow: hidden;
   padding: 0;
   margin: 0 -0.7em -0.7em 0; }
