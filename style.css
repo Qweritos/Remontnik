@@ -5,10 +5,10 @@ html {
 .b-portfolio {
   overflow: hidden;
   padding: 0;
-  margin: 0 -0.7em 0 -0.7em; }
+  margin: 0 -2em 0 -2em; }
   .b-portfolio__item-inner {
     position: relative;
-    margin: 0 0.7em 0.7em 0; }
+    margin: 0 2em 2em 0; }
   .b-portfolio__item-photo {
     width: 100%; }
   .b-portfolio__item:nth-child(1) {
