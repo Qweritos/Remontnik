@@ -13,7 +13,7 @@ html {
 
   overflow: hidden;
   padding: 0;
-  margin: 0 (-$blocksIndent) 0 (-$blocksIndent);
+  margin: 0 (-$blocksIndent) (-$blocksIndent) 0;
 
   &__item {
 
