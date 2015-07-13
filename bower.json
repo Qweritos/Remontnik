@@ -1,0 +1,7 @@
+{
+  "name": "Remontnik",
+  "dependencies": {
+    "angular": "~1.4.2",
+    "angular-resource": "~1.4.2"
+  }
+}
