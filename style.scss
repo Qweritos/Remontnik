@@ -9,7 +9,7 @@ html {
   $large-block-width: 66.7%;
 
   // Отступы между блоками
-  $blocksIndent: .7em;
+  $blocksIndent: 2em;
 
   overflow: hidden;
   padding: 0;
@@ -68,7 +68,7 @@ html {
 
     // Пятый и последующие блоки
     &:nth-child(n+4) {
-      width: 33.3%;
+      width: (100% - $large-block-width);
       float: right;
 
       // В частности, большое фото набора
