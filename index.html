@@ -21,9 +21,9 @@
             <!-- Фото - фон блока -->
             <a href="/{{ portfolioItem.id }}">
                 <img class="b-portfolio__item-photo b-portfolio__item-photo--large hidden"
-                     src="{{ getAbsolutePath(portfolioItem.images[0].image_large) }}"/>
+                     ng-src="{{ getAbsolutePath(portfolioItem.images[0].image_large) }}"/>
                 <img class="b-portfolio__item-photo b-portfolio__item-photo--small hidden"
-                     src="{{ getAbsolutePath(portfolioItem.images[0].image_small) }}" alt="">
+                     ng-src="{{ getAbsolutePath(portfolioItem.images[0].image_small) }}" alt="">
             </a>
 
             <!-- Полупрозрачная плашка -->
@@ -34,7 +34,7 @@
 
                         <div class="b-portfolio__item-contractor-pic-wrapper hidden"
                              ng-show="portfolioItem.contractor.picture">
-                            <img src="{{ portfolioItem.contractor.picture }}" alt=""
+                            <img ng-src="{{ portfolioItem.contractor.picture }}" alt=""
                                  class="b-portfolio__item-contractor-pic">
                         </div>
 
