@@ -28,10 +28,10 @@ h1 {
     .b-portfolio__item:nth-child(1) .b-portfolio__item-heading-username,
     .b-portfolio__item:nth-child(1) .b-portfolio__item-heading-photos-cnt {
       display: block; }
-  .b-portfolio__item:nth-child(n+2):nth-child(-n+4) {
+  .b-portfolio__item:nth-child(2), .b-portfolio__item:nth-child(3), .b-portfolio__item:nth-child(4) {
     float: left;
     width: 33.33333%; }
-    .b-portfolio__item:nth-child(n+2):nth-child(-n+4) .b-portfolio__item-photo--small {
+    .b-portfolio__item:nth-child(2) .b-portfolio__item-photo--small, .b-portfolio__item:nth-child(3) .b-portfolio__item-photo--small, .b-portfolio__item:nth-child(4) .b-portfolio__item-photo--small {
       display: block;
       width: 100%; }
   .b-portfolio__item:nth-child(n+4) {

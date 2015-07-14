@@ -1,0 +1,168 @@
+html {
+  font: 14px "Verdana", "Arial", ​sans-serif;
+}
+
+h1{
+  font-size: 22px;
+  font-weight: normal;
+  color: #000;
+}
+
+//=============================================
+
+.b-portfolio {
+  max-width: 960px;
+  min-width: 320px;
+
+  $blockBase: &;
+
+  // Выставить в зависимости от пропорций большого и малого изображений
+  $large-block-width: 66.7%;
+
+  // Отступы между блоками
+  $blocksIndent: .7em;
+
+  overflow: hidden;
+  padding: 0;
+  margin: 0 (-$blocksIndent) (-$blocksIndent) 0;
+
+  &__item {
+
+    // Показывает в этом блоке фото указанного размера (large|small)
+    @mixin showPhoto($size) {
+      #{$blockBase}__item-photo--#{$size} {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    // Показывает в этом блоке аватарку
+    @mixin showUserPicture() {
+      #{$blockBase}__item-contractor-pic-wrapper {
+        display: table-cell;
+      }
+    }
+
+    // Показывает в этом блоке имя пользователя и счетчик фотографий
+    @mixin showUsernameAndPhotosCounter() {
+      #{$blockBase}__item-heading-username,
+      #{$blockBase}__item-heading-photos-cnt {
+        display: block;
+      }
+    }
+
+    // ================================================================
+
+    &-inner {
+      position: relative;
+      margin: 0 $blocksIndent $blocksIndent 0;
+    }
+
+    &-photo {
+      width: 100%;
+    }
+
+    // Первый блок
+    &:nth-child(1) {
+      width: 100%;
+      @include showPhoto('large');
+      @include showUserPicture();
+      @include showUsernameAndPhotosCounter();
+    }
+
+    // Второй, третий и четвертый блоки
+    
+    &:nth-child(2), &:nth-child(3), &:nth-child(4) 
+    {
+      float: left;
+      width: (100% / 3);
+      @include showPhoto('small');
+    }
+
+    // Пятый и последующие блоки
+    &:nth-child(n+4) {
+      width: (100% - $large-block-width);
+      float: right;
+
+      // В частности, большое фото набора
+      &:nth-child(3n+2) {
+        width: $large-block-width;
+        @include showPhoto('large');
+        @include showUserPicture();
+        @include showUsernameAndPhotosCounter();
+      }
+
+      // В частности, два маленьких фото набора
+      &:nth-child(3n),
+      &:nth-child(3n+1) {
+        @include showPhoto('small');
+      }
+
+      // В частоности, четный набор (у него большое фото должно находиться слева)
+      &:nth-child(2n) {
+        float: left;
+      }
+    }
+  }
+
+  // Плашка заголовка блока
+  &__item-heading {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    display: table;
+    #{$blockBase}__item-heading-wrapper {
+      padding: 10px;
+    }
+    #{$blockBase}__item-heading-inner {
+      overflow: hidden;
+      display: table;
+      width: 100%;
+    }
+    #{$blockBase}__item-info {
+      vertical-align: middle;
+      display: table-cell;
+      width: 100%;
+    }
+    // Аватарка
+    #{$blockBase}__item-contractor-pic-wrapper {
+      padding: 0 10px 0 0;
+      vertical-align: middle;
+      #{$blockBase}__item-contractor-pic {
+        width: 70px;
+        border-radius: 35px;
+      }
+    }
+    // Имя пользователя и галочка около него
+    #{$blockBase}__item-heading-username {
+      float: left;
+      margin: 0 0 10px 0;
+      text-decoration: none;
+      font-size: 16px;
+      color: #ffffff;
+      font-weight: bold;
+      #{$blockBase}__item-heading-confirmed {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url(images/sprites/icons/tick.png) no-repeat;
+      }
+    }
+    // Счетчик фото
+    #{$blockBase}__item-heading-photos-cnt {
+      float: right;
+      font-size: 12px;
+      padding: 0 0 0 18px;
+      background: url(images/sprites/icons/camera.png) 0 50% no-repeat;
+    }
+    // Кликабельный заголовок галлереи
+    #{$blockBase}__item-heading-title {
+      display: block;
+      color: #ffffff;
+      clear: both;
+      text-decoration: none;
+    }
+  }
+}
