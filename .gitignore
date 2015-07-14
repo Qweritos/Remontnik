@@ -1,5 +1,6 @@
-.idea
 .sass-cache
+.idea
 *.css
 *.js
 vendor
+*.map

@@ -71,7 +71,9 @@ h1{
     }
 
     // Второй, третий и четвертый блоки
-    &:nth-child(n+2):nth-child(-n+4) {
+    
+    &:nth-child(2), &:nth-child(3), &:nth-child(4) 
+    {
       float: left;
       width: (100% / 3);
       @include showPhoto('small');
