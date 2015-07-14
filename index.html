@@ -21,9 +21,11 @@
             <!-- Фото - фон блока -->
             <a href="/{{ portfolioItem.id }}">
                 <img class="b-portfolio__item-photo b-portfolio__item-photo--large hidden"
-                     ng-src="{{ getAbsolutePath(portfolioItem.images[0].image_large) }}"/>
+                     ng-src="{{ getAbsolutePath(portfolioItem.images[0].image_large) }}"
+                     alt="{{ portfolioItem.title }}"/>
                 <img class="b-portfolio__item-photo b-portfolio__item-photo--small hidden"
-                     ng-src="{{ getAbsolutePath(portfolioItem.images[0].image_small) }}" alt="">
+                     ng-src="{{ getAbsolutePath(portfolioItem.images[0].image_small) }}"
+                     alt="{{ portfolioItem.title }}">
             </a>
 
             <!-- Полупрозрачная плашка -->
@@ -34,15 +36,16 @@
 
                         <div class="b-portfolio__item-contractor-pic-wrapper hidden"
                              ng-show="portfolioItem.contractor.picture">
-                            <img ng-src="{{ portfolioItem.contractor.picture }}" alt=""
+                            <img ng-src="{{ portfolioItem.contractor.picture }}"
+                                 alt="{{ portfolioItem.contractor.full_name }}"
                                  class="b-portfolio__item-contractor-pic">
                         </div>
 
                         <div class="b-portfolio__item-info">
 
                             <a href="{{ portfolioItem.contractor.home_url }}"
-                               class="b-portfolio__item-heading-username hidden">{{
-                                portfolioItem.contractor.full_name }}
+                               class="b-portfolio__item-heading-username hidden">
+                                {{ portfolioItem.contractor.full_name }}
                                 <i class="b-portfolio__item-heading-confirmed"
                                    ng-show="portfolioItem.contractor.is_documents_confirmed"></i>
                             </a>
