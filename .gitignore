@@ -1,0 +1,5 @@
+.sass-cache
+.idea
+*.scss
+*.coffee
+*.map

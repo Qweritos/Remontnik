@@ -7,7 +7,7 @@
   app = angular.module('RemontnikApp', ['ngResource']);
 
   app.factory('Portfolio', function($resource) {
-    return $resource(baseUrl.concat('api/v1/portfolio/all'));
+    return $resource('portfolio.json');
   });
 
   app.controller('PortfolioController', function($scope, Portfolio) {
@@ -20,3 +20,5 @@
   });
 
 }).call(this);
+
+//# sourceMappingURL=app.js.map
